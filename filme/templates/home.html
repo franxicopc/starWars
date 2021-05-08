@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-  Página Inicial
+{% extends 'base.html' %}
 
-Lista de Filmes
-</body>
-</html>
+{% block title %} Página Inicial {% endblock %}
+
+{% block main %}
+  <h1>Lista de Filmes</h1>
+
+      <ul>
+    {% for f in filmes %}
+
+      <li>
+          {{ f.titulo }}
+          <img src="{{ f.capa.url }}" />
+      </li>
+
+    {% endfor %}
+          </ul>
+
+{% endblock %}

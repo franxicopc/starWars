@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import FilmeForm
+from .models import Filme
 
 def home(request):
     return render(request, 'home.html')
@@ -11,3 +12,8 @@ def add_filme(request):
         form.save()
         return redirect('home')
     return render(request, 'filme_form.html', {'form': form})
+
+
+def list_filmes(request):
+    lista_filmes = Filme.objects.all()
+    return render(request, 'home.html', {'filmes': lista_filmes})
