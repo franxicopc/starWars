@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.get('DB_NAME', 'starwars'),
         'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DB_PASS', '914682'),
+        'PASSWORD': os.environ.get('DB_PASS', 'senhaBD'),
         'HOST': 'localhost',
         'PORT': '5432'
     }
