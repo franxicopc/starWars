@@ -16,9 +16,13 @@ def add_filme(request):
 
 def list_filmes(request):
     lista_filmes = Filme.objects.all()
+
     return render(request, 'list_filmes.html', {'filmes': lista_filmes})
 
 
 def get_filme(request, id):
     filme = get_object_or_404(Filme, pk=id)
-    return render(request, 'filme_detalhes.html', {'filme': filme})
+    lista_musicas = filme.musica_set.all()
+
+    print(lista_musicas)
+    return render(request, 'filme_detalhes.html', {'filme': filme, 'musicas': lista_musicas})

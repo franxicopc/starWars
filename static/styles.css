@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
 
 body{
     font-family: 'Oswald', sans-serif;
 }
 
 h1, h2, h3{
-    margin: 50px 5px;
+    margin: 20px 5px;
 }
 
+.logo{
+    font-size: 60px;
+    font-family:"Poller One" serif;
+    text-shadow: 2px 2px #77393d;
+}
 .bg_container{
   padding: 10px 20px;
   background-color:#f9f9f9e0;
@@ -24,8 +32,18 @@ h1, h2, h3{
 
 .capa_filme{
     width:240px;
+    height: 310px;
 }
 
 .nav-link {
     font-size:18px;
+}
+
+.texto-home{
+    color:#fff;
+    font-size:25px;
+    margin:200px 100px;
+    text-shadow: 2px 2px #000;
+    font-family: 'Newsreader', serif;
+
 }
