@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block title %} Página Inicial {% endblock %}
+
+{% block main %}
+<div class="container bg_container" xmlns="http://www.w3.org/1999/html">
+ <div class="container">
+<div class="row">
+    <div class="col-md-12">
+        <h2>{{ filme.titulo}}</h2>
+      <div class="row">
+          <div class="col-md-9">
+              <strong>Cronologia: </strong> {{filme.ordem}}º Filme da franquia |
+              <strong>Ano: </strong>{{filme.ano}} <br />
+              <strong>Bilheteria: </strong> U$$ {{filme.bilheteria}} |
+              <strong>Duração: </strong> U$$ {{filme.duracao}}
+
+          </div>
+
+          <div class="col-md-3"><img src="{{ filme.capa.url }}" class="capa_filme"/>
+&nbsp;
+          </div>
+</div>
+    </div>
+
+</div>
+    <div class="row">
+
+        <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" width="560" height="315" src="{{ filme.trailer}}}}"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+        </div>
+    </div>
+
+  </div>
+
+    </div>
+
+
+{% endblock %}

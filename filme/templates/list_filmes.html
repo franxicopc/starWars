@@ -5,17 +5,17 @@
 
 {% block main %}
 <div class="container bg_container" xmlns="http://www.w3.org/1999/html">
-  <h1>Filmes</h1>
+  <h1>Filmes da franquia</h1>
 
 <div class="container">
     <div class="row">
   {% for f in filmes %}
+      <a href="{% url 'get_filme' f.id %}">
+          <div class="p-1"><img src="{{ f.capa.url }}" class="capa_filme"/>
+                <div>{{f.titulo}}</div>
 
-      <div class="p-1"><img src="{{ f.capa.url }}" class="capa_filme"/>
-            <div>{{f.titulo}}</div>
-
-      </div>
-
+          </div>
+      </a>
   {% endfor %}
         </div>
   </div>

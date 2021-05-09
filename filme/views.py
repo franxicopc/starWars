@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import FilmeForm
 from .models import Filme
 
@@ -17,3 +17,8 @@ def add_filme(request):
 def list_filmes(request):
     lista_filmes = Filme.objects.all()
     return render(request, 'list_filmes.html', {'filmes': lista_filmes})
+
+
+def get_filme(request, id):
+    filme = get_object_or_404(Filme, pk=id)
+    return render(request, 'filme_detalhes.html', {'filme': filme})
