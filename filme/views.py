@@ -10,10 +10,10 @@ def add_filme(request):
 
     if form.is_valid():
         form.save()
-        return redirect('home')
+        return redirect('list_filmes')
     return render(request, 'filme_form.html', {'form': form})
 
 
 def list_filmes(request):
     lista_filmes = Filme.objects.all()
-    return render(request, 'home.html', {'filmes': lista_filmes})
+    return render(request, 'list_filmes.html', {'filmes': lista_filmes})

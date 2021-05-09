@@ -5,7 +5,7 @@ class Filme(models.Model):
     titulo = models.CharField(max_length=100)
     ano = models.IntegerField()
     duracao = models.CharField(max_length=10)
-    capa = models.ImageField(upload_to='capa_filmes', null=True, blank=True)
+    capa = models.ImageField(upload_to='capa_filmes')
     bilheteria = models.CharField(max_length=50)
     ordem = models.IntegerField()
     trailer = models.CharField(max_length=255)

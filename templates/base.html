@@ -1,17 +1,40 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
-<body>
+<body style="height:100% !important; background-image: url('{% static 'capa_home.jpg' %}'); background-size:cover">
+
+
+  <header>
+  <div class="collapse bg-dark" id="navbarHeader">
     <div class="container">
+    </div>
+  </div>
+  <div class="navbar navbar-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+      <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        <strong>StarWars Universe</strong>
+      </a>
+<nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href="{% url 'home' %}">Home</a>
+        <a class="nav-link" href="{% url 'list_filmes' %}">Filmes</a>
+        <a class="nav-link" href="{% url 'add_filme' %}">Cadastrar Filmes</a>
+      </nav>
+    </div>
+  </div>
+</header>
+ <div class="container">
  {% block main %}
 
 {% endblock %}
 
-    </div>
+ </div>
 
 </body>
 </html>

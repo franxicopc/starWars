@@ -1,19 +1,189 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 
 {% block title %} Página Inicial {% endblock %}
 
 {% block main %}
   <h1>Lista de Filmes</h1>
 
-      <ul>
+
+<!-- Carousel wrapper -->
+<div
+  id="carouselBasicExample"
+  class="carousel slide carousel-fade"
+  data-mdb-ride="carousel"
+>
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-mdb-target="#carouselBasicExample"
+      data-mdb-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-mdb-target="#carouselBasicExample"
+      data-mdb-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-mdb-target="#carouselBasicExample"
+      data-mdb-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+
+  <!-- Inner -->
+  <div class="carousel-inner">
+    <!-- Single item -->
+    <div class="carousel-item active">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
+        class="d-block w-100"
+        alt="..."
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>
+          Nulla vitae elit libero, a pharetra augue mollis interdum.
+        </p>
+      </div>
+    </div>
+
+    <!-- Single item -->
+    <div class="carousel-item">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
+        class="d-block w-100"
+        alt="..."
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+    </div>
+
     {% for f in filmes %}
 
-      <li>
-          {{ f.titulo }}
-          <img src="{{ f.capa.url }}" />
-      </li>
+    <!-- Single item -->
+    <div class="carousel-item">
+      <img
+        src="{{ f.capa}}"
+        class="d-block w-100"
+        alt="..."
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ f.titulo }}</h5>
+        <p>
+          Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+        </p>
+      </div>
+    </div>
+  </div>
+    {% endfor %}}
+  <!-- Inner -->
+
+  <!-- Controls -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-mdb-target="#carouselBasicExample"
+    data-mdb-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-mdb-target="#carouselBasicExample"
+    data-mdb-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- Carousel wrapper -->
+
+
+
+<div id="galeria_obras" class="col-md-12">
+    <div id="dados-obra" class="col-md-12">
+      <div>
+        <h4>
+          Saiba mais sobre: <a href="http://culturacarajas.com.br/index.php?option=com_gallery&amp;view=artista&amp;layout=biografia&amp;id=1">Afonso Camargo</a>
+        </h4>
+        <p></p>
+
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    {% for f in filmes %}
+
+      <div class="item">
+            <img src="{{ f.capa.url }}" alt="" "="">
+            <div class="carousel-caption">
+              <h3>{{ f.titulo }}</h3>
+              <p>Acrílicas tela,100 x 80 cm</p>
+            </div>
+          </div>
 
     {% endfor %}
-          </ul>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+
+
+
+
+
+
+
+    </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Pr¨®xima</span>
+        </a> <a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="dados-artista" class="col-md-12" style="">
+
+      <div class="col-md-12" style="margin:20px;padding:0">
+        <!-- Indicators -->
+
+
+      <div class="col-md-2" style="padding:2px;">
+            <img src="/images/artes/1_1_428795920fed4f4e94fc73ec3992aa8b_ad9302afe86657075aa8cae3ecd19cd9.jpg" alt="" data-target="#myCarousel" data-slide-to="0" style="height:150px;" width="100%">
+
+          </div>
+
+      <div class="col-md-2" style="padding:2px;">
+            <img src="/images/artes/1_1_637261633ecd8aa0d884d332f204f454_71fc05432ff724b965839c4321fb5ff1.jpg" alt="" data-target="#myCarousel" data-slide-to="1" style="height:150px;" width="100%">
+
+          </div>
+
+      <div class="col-md-2" style="padding:2px;">
+            <img src="/images/artes/1_1_038158d7caefdd8c3b4e3a2ae42bece0_c826b51eb48f1a70e5360342798fd2fb.jpg" alt="" data-target="#myCarousel" data-slide-to="2" style="height:150px;" width="100%">
+
+          </div>
+
+
+    </div>
+    </div>
+  </div>
+
+
 
 {% endblock %}
